@@ -6,10 +6,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import fi.lauriari.chilingo_android.navigation.destinations.loginComposable
 import fi.lauriari.chilingo_android.util.Constants.LOGIN_SCREEN
+import fi.lauriari.chilingo_android.viewmodels.LoginViewModel
 
 @Composable
 fun InitNavigation(
-    navController: NavHostController
+    navController: NavHostController,
+    loginViewModel: LoginViewModel
 ) {
     val screen = remember(navController) {
         Screens(navController = navController)
@@ -19,9 +21,8 @@ fun InitNavigation(
         navController = navController,
         startDestination = LOGIN_SCREEN
     ) {
-
-        loginComposable()
-
-
+        loginComposable(
+            loginViewModel = loginViewModel
+        )
     }
 }
