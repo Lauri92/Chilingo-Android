@@ -5,7 +5,6 @@ import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -15,9 +14,7 @@ fun LoginTextField(
     onTextChanged: (String) -> Unit
 ) {
     OutlinedTextField(
-        modifier = Modifier
-            .padding(16.dp),
-        maxLines = 1,
+        singleLine = true,
         label = {
             Text(
                 text = placeholderText

@@ -13,6 +13,9 @@ fun LoginScreen(
 
     val usernameTextState: String by loginViewModel.usernameTextState
     val passwordTextState: String by loginViewModel.passwordTextState
+    val registerUsernameTextState: String by loginViewModel.registerUsernameTextState
+    val registerPasswordTextState: String by loginViewModel.registerPasswordTextState
+    val passwordRetypeTextState: String by loginViewModel.passwordRetypeTextState
 
     Scaffold(
         content = {
@@ -24,6 +27,18 @@ fun LoginScreen(
                 passwordTextState = passwordTextState,
                 onPasswordTextChanged = { newPasswordText ->
                     loginViewModel.passwordTextState.value = newPasswordText
+                },
+                registerUsernameTextState = registerUsernameTextState,
+                onRegisterUsernameTextChanged = { newRegisterUsernameText ->
+                    loginViewModel.registerUsernameTextState.value = newRegisterUsernameText
+                },
+                registerPasswordTextState = registerPasswordTextState,
+                onRegisterPasswordTextChanged = { newRegisterPasswordText ->
+                    loginViewModel.registerPasswordTextState.value = newRegisterPasswordText
+                },
+                passwordRetypeTextState = passwordRetypeTextState,
+                onPasswordRetypeTextChanged = { newPasswordRetypeText ->
+                    loginViewModel.passwordRetypeTextState.value = newPasswordRetypeText
                 }
             )
         }
